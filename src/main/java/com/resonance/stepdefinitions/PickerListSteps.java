@@ -14,10 +14,8 @@ public class PickerListSteps {
 	@Given("User logs in to the application as manager")
 	public void loginToTheApplication() {
 		HomePage home = new HomePage();
-		home.clickOnLogin();
-		home.enterUserName("manager");
-		home.enterPassword("12345678");
-		home.clickOnLogin();
+		home.loginAsManager();
+		
 	}
 	
 	@When("Manager select picking option")
