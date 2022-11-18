@@ -14,12 +14,16 @@ public class HomePage {
 	private WebElement loginBtn;
 
 	@FindBy(xpath = "//input[@placeholder=\"Email\"]")
-	private WebElement userNameTxtBx;
+	private WebElement userNameTxtBox;
 
 	@FindBy(xpath = "//input[@type=\"password\"]")
-	private WebElement passwordTxtBx;
+	private WebElement passwordTxtBox;
+
+	@FindBy(xpath = "//button[@value=\"login\"]")
+	private WebElement loginSubmitBtn;
 
 	Keyword keyword = null;
+
 	public HomePage() {
 		BaseFramework base = new BaseFramework();
 		PageFactory.initElements(base.thread.get(), this);
@@ -36,15 +40,33 @@ public class HomePage {
 	}
 
 	public void enterUserName(String userName) {
-		userNameTxtBx.sendKeys(userName);
+		userNameTxtBox.sendKeys(userName);
 	}
 
 	public void enterPassword(String password) {
-		passwordTxtBx.sendKeys(password);
+		passwordTxtBox.sendKeys(password);
 	}
 
-	private void loginAsManager() {
-		// TODO Auto-generated method stub
+	public void clickOnLoginSubmit() {
+		loginSubmitBtn.click();
+
+	}
+
+//	Author: Sandesh
+	public void loginAsManager() {
+		clickOnLogin();
+		enterUserName("Manager");
+		enterPassword("12345678");
+		clickOnLoginSubmit();
+
+	}
+
+//	Author: Sandesh
+	public void loginAsSalesRep() {
+		clickOnLogin();
+		enterUserName("Sales_rep");
+		enterPassword("12345678");
+		clickOnLoginSubmit();
 
 	}
 
