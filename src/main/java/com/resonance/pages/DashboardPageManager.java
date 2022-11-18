@@ -1,6 +1,6 @@
 package com.resonance.pages;
 
-public class DashboardPage {
+public class DashboardPageManager {
 	
 	
 
