@@ -30,7 +30,7 @@ public class BaseFramework {
 
 	@After
 	public void tearDown() {
-		thread.get().close();
+		//thread.get().close();
 		thread.remove();
 	}
 
