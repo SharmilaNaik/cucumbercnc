@@ -69,6 +69,7 @@ public class Keyword {
 	public static void launchUrl(String url) {
 		driver.get(url);
 		LOG.info("Url is launched successfully");
+		driver.manage().window().maximize();
 	}
 
 	/**
@@ -93,6 +94,7 @@ public class Keyword {
 	public static void click(String locator) {
 		getWebElement("xpath",locator).click();
 	}
+	
 	public static void click(By by) {
 		driver.findElement(by).click();
 	}
