@@ -33,6 +33,7 @@ public class AddToSales_SalesRep {
 	}
 	@Then("customer details should be display")
 	public void customer_details_should_be_display() throws InterruptedException {
+		Thread.sleep(3000);
 		dsr.clickOnCustomer_Details();
 		Thread.sleep(3000);
 	}
