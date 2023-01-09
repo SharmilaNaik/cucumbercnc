@@ -1,5 +1,6 @@
 package com.resonance.stepdefinitions.salesRep;
 
+import com.resonance.pages.DashboardSalesRep;
 import com.resonance.pages.HomePage;
 import com.resonance.pages.Sales_Rep;
 
@@ -9,24 +10,30 @@ import io.cucumber.java.en.When;
 
 public class AddToSales_SalesRep {
 	
-	Sales_Rep sp=new Sales_Rep();
+	HomePage hp=new HomePage();
+	DashboardSalesRep dsr=new DashboardSalesRep(); 
 	
 	@Given("user logs into the system as sales rep")
 	public void user_logs_into_the_system_as_sales_rep() {
 		HomePage hp= new HomePage();
 		hp.loginAsSalesRep();
+		
 	}
 
-	@When("user clickon add sales Tab")
-	public void user_clickon_add_sales_tab() throws InterruptedException {
-	    sp.addTab();
-	    Thread.sleep(3000);
+	@When("user clickon add customer tab")
+	public void user_clickon_add_sales_tab() {
+	    dsr.clickOnCustomerTab();   
+	}
+	
+	@Then("user select customer jig")
+	public void user_clickOn_Jig()  {
+	    dsr.clickOnCustomer_Jig();
+	    
 	    
 	}
-
 	@Then("customer details should be display")
 	public void customer_details_should_be_display() throws InterruptedException {
-		sp.customer();
+		dsr.clickOnCustomer_Details();
 		Thread.sleep(3000);
 	}
 
