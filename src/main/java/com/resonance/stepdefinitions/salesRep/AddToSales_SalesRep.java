@@ -37,6 +37,23 @@ public class AddToSales_SalesRep {
 		dsr.clickOnCustomer_Details();
 		Thread.sleep(3000);
 	}
-
+	@Then("click on view")
+	public void clickOnView() throws InterruptedException {
+		Thread.sleep(3000);
+		dsr.clickOn_View();
+		Thread.sleep(3000);
+	}
+	@Then("click on orderId")
+	public void clickOnOrderId() throws InterruptedException {
+		Thread.sleep(3000);
+		dsr.clickOn_OrderID();
+		Thread.sleep(3000);
+	}
+	@Then("click on printbtn")
+	public void clickOnPrintBtn() throws InterruptedException {
+		Thread.sleep(3000);
+		dsr.clickOn_PrintBtn();
+		Thread.sleep(3000);
+	}
 
 }
