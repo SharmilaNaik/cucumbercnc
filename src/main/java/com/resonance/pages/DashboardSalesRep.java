@@ -36,8 +36,18 @@ public class DashboardSalesRep {
 	
 	//@FindBy(css = "ul.select2-results li[role=\"presentation\"]:nth-child(1)")
 	//private WebElement customer_details;
-	@FindBy(xpath="//div[@id=\"select2-result-label-33\"]")
+	@FindBy(xpath="(//ul/li/div/span[@class='select2-match'])[1]")
 	private WebElement customer_details;
+	
+	
+	@FindBy(xpath="//a[@href=\"https://qa-cnc.rameesystems.com/admin/sales/customer_histry/2\"]")
+	private WebElement view_Tab;
+	
+	@FindBy(xpath="//a[@href=\"https://qa-cnc.rameesystems.com/admin/sales/view/19\"]")
+	private WebElement order_ID;
+	
+	@FindBy(xpath="//button[@onclick=\"window.print();\"]")
+	private WebElement print_Btn;
 
 	Keyword keyword = null;
 
@@ -81,12 +91,40 @@ public class DashboardSalesRep {
 			customer_jig.sendKeys("jig");
 		}
 
-	}public void clickOnCustomer_Details() {
+	}
+	public void clickOnCustomer_Details() {
 		try {
 			customer_details.click();
 		} catch (ElementNotInteractableException e) {
 			keyword.waitForElementToBeClickable(customer_details);
 			customer_details.click();
+		}
+
+	}
+	public void clickOn_View() {
+		try {
+			view_Tab.click();
+		} catch (ElementNotInteractableException e) {
+			keyword.waitForElementToBeClickable(view_Tab);
+			view_Tab.click();
+		}
+
+	}
+	public void clickOn_OrderID() {
+		try {
+			order_ID.click();
+		} catch (ElementNotInteractableException e) {
+			keyword.waitForElementToBeClickable(order_ID);
+			order_ID.click();
+		}
+
+	}
+	public void clickOn_PrintBtn() {
+		try {
+			print_Btn.click();
+		} catch (ElementNotInteractableException e) {
+			keyword.waitForElementToBeClickable(print_Btn);
+			print_Btn.click();
 		}
 
 	}
