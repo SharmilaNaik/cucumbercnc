@@ -1,1 +1,8 @@
+<<<<<<< HEAD
+2023-Jan-11 10:21:39,692 [main] com.resonance.utility.Keyword 
+  INFO  chrome is launched successfully
+2023-Jan-11 10:21:43,028 [main] com.resonance.utility.Keyword 
+  INFO  Url is launched successfully
+=======
  INFO  Url is launched successfully
+>>>>>>> e3491d703511d1d394fa2e236485bbd55df043fd
