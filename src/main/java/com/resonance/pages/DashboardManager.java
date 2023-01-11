@@ -15,7 +15,7 @@ public class DashboardManager {
 		PageFactory.initElements(base.thread.get(), this);
 		keyword = new Keyword();
 	}
-	@FindBy(xpath="//span[text()=' Picking                 ']")
+	@FindBy(xpath="(//span[contains(text(),'Picking')])[1]")
 	private WebElement picking_tab;
 	
 	@FindBy(xpath="//span[text()=' Short QTY']")
@@ -30,4 +30,34 @@ public class DashboardManager {
 
 	}
 	
+	@FindBy(xpath="//*[@id=\"picking_confirm_picked_order\"]/a/span")
+	private WebElement confirm_picked_order;
+	  
+	@FindBy(xpath="//input[@id='start_date']")
+	private WebElement form_date;
+	
+	@FindBy(xpath="//input[@id='start_date']")
+	private WebElement select_date;
+	
+	
+	public void pickingtab() {
+		picking_tab.click();
+		 
+	}
+	
+	public void confirmpickedordertab() {
+ 		confirm_picked_order.click();
+
+	}
+	 public void clickOnFromDate() {
+		 form_date.click();
+	 }
+	
+	public void selectDateFromDropDown() {
+		select_date.sendKeys("01/01/2023");
+		
+	}
 }
+
+	
+
